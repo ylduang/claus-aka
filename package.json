@@ -14,7 +14,7 @@
     "React"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@ASmallBean"
+    "registry": "https://npm.pkg.github.com/ASmallBean"
   },
   "repository": {
     "type": "git",
