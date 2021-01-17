@@ -1,6 +1,6 @@
 {
-  "name": "claus-aka",
-  "version": "0.1.0",
+  "name": "@ASmallBean/claus-aka",
+  "version": "0.1.1",
   "description": "React components library",
   "author": "Leo<monkeydreamgo@gmail.com>",
   "license": "MIT",
@@ -37,10 +37,10 @@
     "build:view": "react-scripts build",
     "storybook": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
     "tar": "cd ./lib && tar -czvf claus-aka.tar ./*",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
     "eject": "react-scripts eject"
   },
   "husky": {
@@ -81,8 +81,9 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-transition-group": "^4.4.0",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "8.1.0",
     "babel-preset-react-app": "^10.0.0",
+    "cross-env": "^7.0.3",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "node-sass": "^5.0.0",
