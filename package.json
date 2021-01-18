@@ -4,7 +4,7 @@
   "description": "React components library",
   "author": "Leo<monkeydreamgo@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,6 +13,7 @@
     "UI",
     "React"
   ],
+  "homepage": "https://github.com/ASmallBean/claus-aka",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/ASmallBean"
   },
