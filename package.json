@@ -4,7 +4,7 @@
   "description": "React components library",
   "author": "Leo<monkeydreamgo@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -41,7 +41,6 @@
     "tar": "cd ./lib && tar -czvf claus-aka.tar ./*",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
     "eject": "react-scripts eject"
   },
   "husky": {
