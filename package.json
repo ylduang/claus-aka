@@ -1,6 +1,6 @@
 {
   "name": "@ASmallBean/claus-aka",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React components library",
   "author": "Leo<monkeydreamgo@gmail.com>",
   "license": "MIT",
@@ -41,7 +41,6 @@
     "tar": "cd ./lib && tar -czvf claus-aka.tar ./*",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
     "eject": "react-scripts eject"
   },
   "husky": {
