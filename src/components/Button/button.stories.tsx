@@ -31,14 +31,12 @@ Large.args = {
   children: "lg Button",
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "sm",
-  children: "sm Button",
-};
+export const Small: React.VFC<ButtonProps> = () => (
+  <Button size="sm">test vfc button</Button>
+);
 
 export const LinkButton = Template.bind({});
-Small.args = {
+LinkButton.args = {
   btnType: "link",
   href: "https://google.com",
   children: "link Button",
