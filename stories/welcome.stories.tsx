@@ -1,8 +1,8 @@
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import { storiesOf } from "@storybook/react";
+import React from "react";
 
-storiesOf('Welcome page', module).add(
-  'welcome',
+storiesOf("Welcome page", module).add(
+  "welcome",
   () => {
     return (
       <>
@@ -12,5 +12,5 @@ storiesOf('Welcome page', module).add(
       </>
     );
   },
-  { info: { disable: true } }
+  {}
 );
