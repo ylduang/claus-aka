@@ -1,72 +1,45 @@
-import React, { useState } from 'react'
-import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { Input } from './input'
-const ControlledInput = () => {
-  const [value, setValue] = useState()
-  return <Input value={value} defaultValue={value} onChange={(e) => {setValue(e.target.value)}}/>
-}
-const defaultInput = () => (
-  <>
-  <Input
-    style={{width: '300px'}}
-    placeholder="placeholder"
-    onChange={action('changed')}
-  />
-  <ControlledInput />
-  </>
-)
-const disabledInput = () => (
-  <Input
-    style={{width: '300px'}}
-    placeholder="disabled input"
-    disabled 
-  />
-)
+import { action } from "@storybook/addon-actions";
+import { Meta, Story } from "@storybook/react/types-6-0";
+import React from "react";
+import { Input, InputProps } from "./input";
+export default {
+  title: "Input",
+  component: Input,
+  argTypes: {
+    onChange: () => {
+      action("changed");
+    },
+  },
+} as Meta;
 
-const iconInput = () => (
-  <Input
-    style={{width: '300px'}}
-    placeholder="input with icon"
-    icon="search"
-  />  
-)
+const Template: Story<InputProps> = (args) => <Input {...args} />;
 
-const sizeInput = () => (
-  <>
-    <Input
-      style={{width: '300px'}}
-      defaultValue="large size"
-      size="lg"
-    />
-    <Input
-      style={{width: '300px'}}
-      placeholder="small size"
-      size="sm"
-    />
-  </>
-)
+export const DefaultInput = Template.bind({});
 
-const pandInput = () => (
-  <>
-    <Input
-      style={{width: '300px'}}
-      defaultValue="prepend text"
-      prepend="https://"
-    />
-    <Input
-      style={{width: '300px'}}
-      defaultValue="google"
-      append=".com"
-    />
-    
-  </>
-)
+DefaultInput.args = {
+  placeholder: "placeholder",
+};
 
+DefaultInput.storyName = "Input";
 
-storiesOf('Input component', module)
-  .add('Input', defaultInput)
-  .add('被禁用的 Input', disabledInput)
-  .add('带图标的 Input', iconInput)
-  .add('大小不同的 Input', sizeInput)
-  .add('带前后缀的 Input', pandInput)
+export const DisableInput = Template.bind({});
+
+DisableInput.args = { disabled: true, placeholder: "disabled input" };
+
+DisableInput.storyName = "被禁用的Input";
+
+export const IconInput = Template.bind({});
+
+IconInput.args = { placeholder: "input with icon", icon: "search" };
+
+IconInput.storyName = "带图标的";
+
+export const PrependInput = Template.bind({});
+
+PrependInput.args = {
+  placeholder: "input with icon",
+  prepend: "https://",
+  append: ".com",
+};
+
+PrependInput.storyName = "带前后缀的Input";

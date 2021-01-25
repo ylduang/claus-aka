@@ -4,7 +4,7 @@ import Button, { ButtonProps } from "./button";
 
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 export default {
-  title: "Example/Button",
+  title: "Button",
   component: Button,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -16,40 +16,30 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   btnType: "primary",
+  children: "primary Button",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   btnType: "danger",
+  children: "danger Button",
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: "lg",
+  children: "lg Button",
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: "sm",
+  children: "sm Button",
 };
 
-// const defaultButton = () => <Button onClick={action('clicked')}> default button </Button>;
-
-// const buttonWithSize = () => (
-//   <>
-//     <Button size="lg"> large button </Button>
-//     <Button size="sm"> small button </Button>
-//   </>
-// );
-
-// const buttonWithType = () => (
-//   <>
-//     <Button btnType="primary"> primary button </Button>
-//     <Button btnType="danger"> danger button </Button>
-//     <Button btnType="link" href="https://google.com">
-//       {' '}
-//       link button{' '}
-//     </Button>
-//   </>
-// );
-// storiesOf('Button Component', module).add('Button', defaultButton).add('不同尺寸的 Button', buttonWithSize).add('不同类型的 Button', buttonWithType);
+export const LinkButton = Template.bind({});
+Small.args = {
+  btnType: "link",
+  href: "https://google.com",
+  children: "link Button",
+};

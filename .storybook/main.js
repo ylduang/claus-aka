@@ -24,12 +24,13 @@
 
 module.exports = {
   stories: [
-    "../src/components/Button/*.stories.mdx",
-    "../src/components/Button/*.stories.@(js|jsx|ts|tsx)",
-    "../src/styles/index.scss",
+    "../src/**/**/*.stories.mdx",
+    "../src/**/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../src/styles/index.scss",
     "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
-    "../stories/**/*.scss",
+    "../stories/**/**/*.stories.mdx",
+    "../stories/**/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../stories/**/**/*.scss",
   ], // 配置编译文件的入口
   addons: [
     "@storybook/addon-links",
