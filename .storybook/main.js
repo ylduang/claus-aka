@@ -24,9 +24,9 @@
 
 module.exports = {
   stories: [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)",
-    "../src/**/*.scss",
+    "../src/components/Button/*.stories.mdx",
+    "../src/components/Button/*.stories.@(js|jsx|ts|tsx)",
+    "../src/styles/index.scss",
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../stories/**/*.scss",
@@ -35,7 +35,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-actions",
-    "@storybook/preset-create-react-app",
   ], // 配置使用的官方提供的插件
   webpackFinal: async (config) => {
     // do mutation to the config
