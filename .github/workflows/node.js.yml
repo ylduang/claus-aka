@@ -9,16 +9,21 @@ on:
     - 'v*'
 
 jobs:
+  echo_job:
+    runs-on: windows-latest
+    steps:
+      - run: echo 'Hi ${{ github.ref }}'  # Hi Mona
+      - run: echo 'Hi ${{ github.ref }}'  # Hi Octocat
 
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
-    
+
     - name: Get version
       id: get_version
       run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-    
+
     - name: Create Release
       uses: actions/create-release@v1
       env:
@@ -28,15 +33,13 @@ jobs:
         release_name: ${{ steps.get_version.outputs.VERSION }}
         draft: false
         prerelease: false
+
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
